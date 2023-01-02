@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockjjam's Portfolio</title>
+    <meta name="description" content="Portfolio for world-reowned backend developer Blockjjam" />
+    <meta name="author" content="Blockjjam" />
+    <script src="https://kit.fontawesome.com/4d7764364a.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="imgs/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+
+    <style>
+      :root {
+        --background-color: thistle;
+        --text-color: whitesmoke;
+        --base-space: 8px;
+      }
+      .first-list {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        margin-left: var(--base-space);
+      }
+
+      .second-list {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        margin-left: calc(var(--base-space) * 2);
+      }
+
+      @media screen and (max-width: 768px) {
+        :root {
+          --background-color: salmon;
+          --text-color: blue;
+          --base-space: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="first-list">
+      <li>Orange</li>
+      <li>Apple</li>
+    </ul>
+    <ul class="second-list">
+      <li>Korea</li>
+      <li>Japan</li>
+      <li>China</li>
+    </ul>
+  </body>
+</html>
