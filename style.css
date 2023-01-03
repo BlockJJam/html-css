@@ -173,6 +173,10 @@ p {
   border-radius: 4px;
 }
 
+.home__contact:hover {
+  background-color: var(--color-orange);
+}
+
 /* Section common */
 .section {
   text-align: center;
@@ -308,11 +312,11 @@ p {
   margin: 40px;
 }
 .category__btn {
-  width: 140px;
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
-  padding: 8px 4px;
+  padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -335,9 +339,9 @@ p {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -415,7 +419,7 @@ p {
 
 /* Testimonial */
 
-#testimonials {
+#testimonial {
   background-color: var(--color-light-white);
 }
 
@@ -506,8 +510,24 @@ p {
 
 /* For below 768px screen width (최소한의 기능 & 정보만 추천!)*/
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 28px;
+    --font-medium: 16px;
+    --font-regular: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+  }
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 18px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -533,30 +553,53 @@ p {
 
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .category__btn {
+    margin: 4px;
+    width: 100%;
+  }
+
   .project {
     flex-grow: 1;
   }
 
-  .category__btn {
-    width: 107px;
-    border: 1px solid var(--color-dark-white);
-    border-radius: var(--size-border-radius);
-    font-size: var(--font-small);
-    padding: 2px 2px;
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonial__img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+  .testimonial__img:nth-child(odd) {
+    margin-right: 0;
+  }
+  .testimonial__img:nth-child(even) {
+    margin-left: 0;
   }
 
-  .testimonial__img {
-    width: 100px;
-    height: 100px;
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }
