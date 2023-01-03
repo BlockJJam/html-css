@@ -14,7 +14,7 @@
         height: 300px;
         margin: 80px auto;
         background-color: plum;
-        transition: 250ms;
+        transition: 2500ms;
       }
 
       .box.active {
@@ -44,6 +44,30 @@
     <div class="box">19</div>
     <div class="box">20</div>
 
-    <script></script>
+    <script>
+      const boxes = document.querySelectorAll('.box');
+
+      const callback = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          } else {
+            entry.target.classList.remove('active');
+          }
+        });
+      };
+
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 1, // 0 ~ 1 --> 0.5(50%) 의미: 50%가 화면에 들어오면 애니메이션이 작동한다.
+        // threshold를 좀 더 정확히 이야기하면, 숫자 퍼센트만큼 화면에 보여야지만 애니메이션이 동작한다
+      };
+
+      // WebAPI 중 하나로, 원하는 요소가 특정영역에 들어왔을 때 알려주는 콜백함수를 호출해주는 "관찰자"
+      const observer = new IntersectionObserver(callback, options);
+
+      boxes.forEach((box) => observer.observe(box));
+    </script>
   </body>
 </html>
